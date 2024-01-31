@@ -1,0 +1,122 @@
+public class M2 {
+//	declared 3 global non static variable
+	String name;
+	int marks;
+	String batchCode;
+	
+//	created parametrized constructor
+	M2(String name,int marks,String batchCode){
+//		the values user will pass in actual argument will be assigned to instace variables
+		this.name=name;
+		this.marks=marks;
+		this.batchCode=batchCode;
+		
+	}
+//	here we declared non parameterized constructor which will used for non static members
+	M2(){
+		
+	}
+	 
+	
+	public static void main(String[] args) {
+//		declared one class type array of length 3
+		M2 arr[]=new M2[3];
+//		object creation and non parameterized constructor calling
+		M2 ref=new M2();
+		
+//		object creation and contructor calling and passing values in actual argument 
+		M2 s1=new M2("Atul1998",35,"M2");
+		M2 s2=new M2("Harshad1996",40,"M3");
+		M2 s3=new M2("Anil2002",56,"M2");
+//		we created 3 different references and intilized 3 diff values
+		
+//		all the three references values will be store in arr class type array variable
+		arr[0]=s1;
+		arr[1]=s2;
+		arr[2]=s3;
+		
+//		calling non static method with the help of variable ref and passing arr in actual argument
+		ref.leapInfo(arr);
+	}
+	public  void leapInfo(M2 []arr) {
+		 
+//		declared 3 int type var. and stored the full length of name values from arr 
+		int l1= arr[0].name.length();
+		int l2=arr[1].name.length();
+		int l3=arr[2].name.length();
+		
+//		here we declared three string type var. and stored the length of only year values from name by using substring method of string class
+		String a=new String(arr[0].name.substring(l1-4));
+		String a1=new String(arr[1].name.substring(l2-4));
+		String a2=new String(arr[2].name.substring(l3-4));
+		
+		
+
+//		here we assigned all the string type year values to three diff integer class type of var.
+		Integer i1=new Integer(a);
+		Integer i2=new Integer(a1);
+		Integer i3=new Integer(a2);
+	 
+		M2 ref1=new M2();
+		
+		ref1.usingForLoop(i1,i2,i3);
+		ref1.usingIfElse(i1,i2,i3);
+	}
+		
+/*		so now we can check wheather the year is leap or not by using two diff methods first is by using for loop and the second is by using if else >> 
+the lines of code of first method is lesser than the second method  	 */
+			 
+		 
+	
+		
+		public void usingForLoop(int i1,int i2,int i3) {
+			 int j []=new int[3];
+			int i=0;
+			 j[i]=i1;
+			 i++;
+			 j[i]=i2;
+			 i++;
+			 j[i]=i3;
+			 
+			 for(int k=0;k<3;k++) {
+					if(j[k]%4==0 && j[k]%100 !=0 || j[k]%400==0) {
+						System.out.println(j[k]+" is a leap year");
+					}
+					else {
+						System.out.println(j[k]+" is not a leap year");
+					}
+			
+			 					}
+														}
+		
+			 
+		public void usingIfElse(int i1,int i2,int i3) {
+		if(i1%4==0 && i1%100 !=0 || i1%400==0) {
+			System.out.println(i1+" is a leap year");
+			
+												}
+		else {
+			System.out.println( i1+" is not a leap year");
+			}
+		
+		if(i2%4==0 && i2%100 !=0 || i2%400==0) {
+			System.out.println(i2+" is a leap year");
+			
+												}
+		else {
+			System.out.println(i2+" is not a leap year");
+			}
+		
+		
+		if(i3%4==0 && i3%100 !=0 || i3%400==0) {
+			System.out.println(i3+" is a leap year");
+			
+												}
+		else {
+			System.out.println(i3+" is not a leap year");
+			
+			} 
+		
+													}
+
+												}
